@@ -427,8 +427,6 @@ async def skills(ctx, *, player_name):
 
     player_ids = search_player(player_name)
 
-    print(player_ids)
-    print(len(player_ids))
 
     if not player_ids:
         await ctx.send("❌ Player not found.")
@@ -458,10 +456,7 @@ async def skills(ctx, *, player_name):
     if len(players) == 1:
 
         player = players[0]
-        print(player.get("avatarUrl"))
-        import pprint
-        pprint.pprint(player)
-
+        
         country_id = player.get("country")
 
         country_name = "Unknown"
