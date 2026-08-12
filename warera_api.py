@@ -148,7 +148,7 @@ def search_player(name):
     response.raise_for_status()
 
     data = response.json()
-    print(data)
+    
     user_ids = data[0]["result"]["data"]["userIds"]
 
     if not user_ids:
@@ -176,9 +176,7 @@ def get_player(user_id):
     response.raise_for_status()
 
     data = response.json()
-    print(data)
-    import json
-    print(json.dumps(data, indent=2, ensure_ascii=False))
+    
     return data[0]["result"]["data"]
 
 def get_players_lite(user_ids):
@@ -189,7 +187,7 @@ def get_players_lite(user_ids):
             "userId": user_id
         }
 
-    print(payload)
+    
 
     response = requests.post(
         URL_PLAYER,
